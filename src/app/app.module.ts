@@ -4,32 +4,40 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+//import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+//import { PromocoesPage } from '../pages/promocoes/promocoes'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PromocoesPageModule } from '../pages/promocoes/promocoes.module';
+import { GoldPageModule } from '../pages/gold/gold.module';
+
+import { HttpModule } from "@angular/http"
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    //ContactPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    PromocoesPageModule,
+    GoldPageModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    //ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   providers: [
     StatusBar,
